@@ -6,13 +6,11 @@ generator client {
   provider = "prisma-client-js"
   previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
-
 model Category {
   id String @id @default(uuid())
   name String
   companions Companion[]
 }
-
 model Companion{
   id String @id @default (uuid())
   userId String 
@@ -30,5 +28,4 @@ model Companion{
   categoryId String
 
   @@index([categoryId])
-  @@fulltext([name])
 }
